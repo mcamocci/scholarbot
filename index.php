@@ -1,22 +1,35 @@
 
 <?php
+
       /*
         ->The challenge for the facebook messenger bot was started today Tuesday of February 28 , 2017
         ->Hope i will win.
         ->Developed by Emmanuel Meena , Dar es salaam tanzania
       */
 
-      //the following code allow the imports to be specified on single class as array and being imported cleanly
-      //its look nice for real :)
       require_once("ImportFix.php");
       ImportFix::fixNow();
+      header("Content-type:application/json");
+      $customObject=new MessageTemplate(MessageTemplate::$type_text);
+      $customObject->setRecipient("scholarbot");
 
+      echo json_encode($customObject->getMessageObject());
+      
+      /*
+      $message=new Message();
+      $message->setName("scholar");
+      $message->setId(1442);
+      $message->setContent(array('itemOne'=>1,'itemTwo'=>2,'itemThree'=>3,'itemFour'=>4));
 
-      $sender=new Sender();
-      $sender->saySomething("Challenge accepted");
+      $encodedObject=json_encode($message->jsonSerialize());
+      echo $encodedObject;
 
-      //test the Receiver
-      Receiver::status();
+      $decode=json_decode($encodedObject,true);
+
+      print_r($decode);
+
+      echo "this is only id".$decode['content']['itemFour'];
+      */
 
 
  ?>

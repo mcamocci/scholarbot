@@ -1,12 +1,12 @@
 <?php
 
   class Sender{
-    
+
     public function __construct(){
 
     }
 
-    public function responnd(){
+    public function respond(){
 
     }
 
