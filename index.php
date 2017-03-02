@@ -14,7 +14,7 @@
       $customObject->setRecipient("scholarbot");
 
       echo json_encode($customObject->getMessageObject());
-      
+
       /*
       $message=new Message();
       $message->setName("scholar");
